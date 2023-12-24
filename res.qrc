@@ -11,5 +11,21 @@
         <file>images/volumn.bmp</file>
         <file>images/mute.bmp</file>
         <file>images/001.GIF</file>
+        <file>images/xuanzeshipin.png</file>
+        <file>images/File.png</file>
+        <file>images/jietu1.png</file>
+        <file>images/queren.png</file>
+        <file>images/bofang.png</file>
+        <file>images/tingzhi.png</file>
+        <file>images/zanting.png</file>
+        <file>images/sousuo1.png</file>
+        <file>images/checkbox_11.png</file>
+        <file>images/checkbox_ON.png</file>
+        <file>images/dqxh.png</file>
+        <file>images/dqxh1.png</file>
+        <file>images/lbxh.png</file>
+        <file>images/liebiao1.png</file>
+        <file>images/chebox.png</file>
+        <file>images/def_chebox.png</file>
     </qresource>
 </RCC>

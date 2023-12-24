@@ -3,6 +3,10 @@
 
 #include <QFileDialog>
 #include <QDebug>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsVideoItem>
+#include <QDateTime>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -24,11 +28,16 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(player,SIGNAL(mediaStatusChanged(QMediaPlayer::MediaStatus)),
             this,SLOT(playstate(QMediaPlayer::MediaStatus)));
 
+    ui->comboBox->setCurrentIndex(1);
+
+    videoWidget_Min = new QVideoWidget();
+    videoWidget_Min->setGeometry(0,0,300,200);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete videoWidget_Min;
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
@@ -37,7 +46,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     //退出全屏
     ui->videoWidget->setWindowFlags(Qt::SubWindow);
     ui->videoWidget->showNormal();
-    ui->videoWidget->setGeometry(160,10,820,500);
+    ui->videoWidget->setGeometry(10,10,800,600);
 }
 
 void MainWindow::onstateChanged(QMediaPlayer::State state)
@@ -53,7 +62,10 @@ void MainWindow::playstate(QMediaPlayer::MediaStatus status)
     {
         qDebug()<<u8"视频播放结束";
         if(ui->checkBox_DQ->isChecked())
+        {
+            ui->plainTextEdit->appendPlainText(CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]));
             player->play();
+        }
         else if(ui->checkBox_LB->isChecked())
         {
             if(VideoNameList.length() > 0)
@@ -64,6 +76,7 @@ void MainWindow::playstate(QMediaPlayer::MediaStatus status)
                     curentVideoNum = 0;
                 }
                 QString Path = CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]);
+                ui->plainTextEdit->appendPlainText(CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]));
                 qDebug()<<"curentVideoNum="<<curentVideoNum<<",Path="<<Path;
                 player->setMedia(QUrl::fromLocalFile(Path));//设置播放文件
                 player->play();
@@ -113,6 +126,8 @@ void MainWindow::on_btnAdd_clicked()
     ui->LabCurMedia->setText(fileInfo.fileName());
 
     player->setMedia(QUrl::fromLocalFile(aFile));//设置播放文件
+    ui->plainTextEdit->appendPlainText(aFile);
+
     player->play();
 }
 
@@ -195,5 +210,140 @@ void MainWindow::on_listWidget_doubleClicked(const QModelIndex &index)
     QString Path = CurrentselectedDir+"/"+ui->listWidget->item(index.row())->text();
     qDebug()<<"curentVideoNum="<<curentVideoNum<<",Path="<<Path;
     player->setMedia(QUrl::fromLocalFile(Path));//设置播放文件
+    ui->plainTextEdit->appendPlainText(Path);
     player->play();
+}
+
+void MainWindow::on_comboBox_currentTextChanged(const QString &arg1)
+{
+    qDebug()<<"on_comboBox_currentTextChanged="<<arg1;
+    qreal initialPlaybackRate = arg1.toDouble();
+    player->setPlaybackRate(initialPlaybackRate);
+}
+
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    if(ui->spinBox->value() > 0)
+    {
+        QTimer::singleShot(ui->spinBox->value()*6000, this,[&](){
+              this->close();
+        });
+    }
+
+//    QGraphicsScene *scene = new QGraphicsScene(this);
+//    QGraphicsView *view = new QGraphicsView(scene);
+//    view->setFixedSize(640, 480);
+//    // 创建 QMediaPlayer 和 QVideoWidget，并设置为镜像翻转模式
+//    QMediaPlayer *player_1 = new QMediaPlayer();
+//    QString Path = CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]);
+//    qDebug()<<"curentVideoNum="<<curentVideoNum<<",Path="<<Path;
+//    player_1->setMedia(QUrl::fromLocalFile(Path));
+//    QVideoWidget *videoWidget = new QVideoWidget();
+//    videoWidget->setAttribute(Qt::WA_TransparentForMouseEvents);
+//    videoWidget->show();
+//    // 将 QMediaPlayer 和 QVideoWidget 添加到 scene 中
+//    scene->addWidget(videoWidget);
+
+//    // 创建 QGraphicsVideoItem 并添加到 scene 中
+//    QGraphicsVideoItem *videoItem = new QGraphicsVideoItem();
+//    videoItem->setSize(view->size());
+//    scene->addItem(videoItem);
+//    // 将播放器的视频输出设置为 QGraphicsVideoItem，并开启播放
+//    player_1->setVideoOutput(videoItem);
+//    player_1->play();
+}
+
+void MainWindow::on_radioButton_clicked(bool checked)
+{
+    if(checked)
+        ui->videoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
+}
+
+void MainWindow::on_radioButton_2_clicked(bool checked)
+{
+    if(checked)
+        ui->videoWidget->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+//    QScreen *screen = QGuiApplication::primaryScreen();
+//    QPixmap m_widgetScreenPic = screen->grabWindow(0, rect.x(), rect.y(), rect.width(), rect.height());//抓取widget的图片
+//    m_widgetScreenPic = m_widgetScreenPic.scaled(QSize(rect.width(), rect.height()), Qt::KeepAspectRatio);
+
+     player->pause();
+     QPixmap pixmap = QPixmap::grabWindow(ui->videoWidget->winId());
+
+     QString curPath=QCoreApplication::applicationDirPath();//
+     QString dlgTitle=u8"选择一个目录"; //对话框标题
+     QString selectedDir=QFileDialog::getExistingDirectory(this,dlgTitle,curPath,QFileDialog::ShowDirsOnly);
+
+     QDateTime time = QDateTime::currentDateTime();
+     QString TimeData = time.toString("yyyy_MM_dd_hh_mm_ss.png");
+
+     pixmap.save(selectedDir+"/"+TimeData);
+
+     player->play();
+}
+
+void MainWindow::on_radioButton_3_clicked(bool checked)
+{
+    if(checked)
+    {
+        videoWidget_Min = new QVideoWidget();
+        videoWidget_Min->setGeometry(0,0,300,200);
+        player->setVideoOutput(videoWidget_Min);
+        videoWidget_Min->show();
+    }
+}
+
+void MainWindow::on_radioButton_4_clicked(bool checked)
+{
+    if(checked)
+    {
+        player->setVideoOutput(ui->videoWidget);
+        videoWidget_Min->hide();
+    }
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    for(int i=ui->listWidget->count()-1;i>=0;i--)
+    {
+        ui->listWidget->takeItem(i);
+    }
+
+    if(ui->lineEdit->text().length() > 0)
+    {
+        QString sousuo = ui->lineEdit->text();
+        for(int i=0;i<VideoNameList.length();i++)
+        {
+            if(QString(VideoNameList[i]).indexOf(sousuo) != -1)
+                ui->listWidget->addItem(new QListWidgetItem(VideoNameList[i]));
+        }
+    }
+    else
+    {
+        for(int i=0;i<VideoNameList.length();i++)
+        {
+            ui->listWidget->addItem(new QListWidgetItem(VideoNameList[i]));
+        }
+    }
+
+
+}
+
+void MainWindow::on_checkBox_DQ_clicked(bool checked)
+{
+    ui->checkBox_DQ->setChecked(checked);
+    ui->checkBox_LB->setChecked(!checked);
+
+}
+
+void MainWindow::on_checkBox_LB_clicked(bool checked)
+{
+    ui->checkBox_DQ->setChecked(!checked);
+    ui->checkBox_LB->setChecked(checked);
 }

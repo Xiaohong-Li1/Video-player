@@ -7,7 +7,7 @@
 #include    <QVideoWidget>
 
 #include    "qmyvideowidget.h"
-
+#include <QTimer>
 namespace Ui {
 class MainWindow;
 }
@@ -48,6 +48,27 @@ private slots:
     void on_btnAdd_File_clicked();
     void on_listWidget_doubleClicked(const QModelIndex &index);
 
+    void on_comboBox_currentTextChanged(const QString &arg1);
+
+    void on_pushButton_2_clicked();
+
+    void on_radioButton_clicked(bool checked);
+
+    void on_radioButton_2_clicked(bool checked);
+
+    void on_pushButton_3_clicked();
+
+    void on_radioButton_3_clicked(bool checked);
+
+    void on_radioButton_4_clicked(bool checked);
+
+    void on_pushButton_4_clicked();
+
+
+    void on_checkBox_DQ_clicked(bool checked);
+
+    void on_checkBox_LB_clicked(bool checked);
+
 public:
     QMediaPlayer    *player;//视频播放器
     QString  durationTime;
@@ -57,6 +78,7 @@ public:
     QString CurrentselectedDir;//当前文件夹目录
     QStringList VideoNameList;//视频列表
 
+    QVideoWidget *videoWidget_Min;
 private:
     Ui::MainWindow *ui;
 };
