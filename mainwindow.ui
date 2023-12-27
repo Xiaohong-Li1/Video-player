@@ -6,179 +6,874 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>800</height>
+    <width>1282</width>
+    <height>702</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1200</width>
-    <height>800</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1200</width>
-    <height>800</height>
+    <width>99999</width>
+    <height>99999</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>视频播放器</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(230, 245, 255);</string>
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QmyVideoWidget" name="videoWidget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>800</width>
-      <height>600</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>660</y>
-      <width>801</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>35</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16777215</width>
-      <height>9999999</height>
-     </size>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <property name="spacing">
-      <number>9</number>
-     </property>
-     <property name="leftMargin">
-      <number>1</number>
-     </property>
-     <property name="topMargin">
-      <number>1</number>
-     </property>
-     <property name="rightMargin">
-      <number>1</number>
-     </property>
-     <property name="bottomMargin">
-      <number>1</number>
-     </property>
-     <item>
-      <widget class="QPushButton" name="btnPlay">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="res.qrc">
-         <normaloff>:/images/images/620.bmp</normaloff>:/images/images/620.bmp</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnPause">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="res.qrc">
-         <normaloff>:/images/images/622.bmp</normaloff>:/images/images/622.bmp</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnStop">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="res.qrc">
-         <normaloff>:/images/images/624.bmp</normaloff>:/images/images/624.bmp</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnSound">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="res.qrc">
-         <normaloff>:/images/images/volumn.bmp</normaloff>:/images/images/volumn.bmp</iconset>
-       </property>
-       <property name="flat">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="sliderVolumn">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QSlider::groove:horizontal { 
+   <layout class="QGridLayout" name="gridLayout_8">
+    <item row="0" column="0" colspan="3">
+     <widget class="QWidget" name="widget_6" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>51</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="3">
+        <widget class="QPushButton" name="btnAdd_File">
+         <property name="minimumSize">
+          <size>
+           <width>221</width>
+           <height>51</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>221</width>
+           <height>51</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+	background-image: url(:/images/iamge1/xqlbview-list.png);
+	background-repeat: no-repeat;
+	background-origin: padding;
+	background-position: left center;
+	padding-left:20px;
+	border: none;
+    background-color: rgb(240,240, 240);    
+    color:rgb(0, 0, 0);
+	text-align:right;
+	border-radius:10px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>   Select File </string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/images/iamge1/ss_search.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>221</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>221</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="LabCurMedia">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>No Video</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="btnAdd">
+         <property name="minimumSize">
+          <size>
+           <width>221</width>
+           <height>51</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>221</width>
+           <height>51</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+    background-image: url(:/images/iamge1/sp_videoxx.png);
+    background-repeat: no-repeat;
+	background-position:top left;
+	padding-left:20px;
+	border: none;
+    background-color: rgb(240,240, 240);    
+    color:rgb(0, 0, 0);
+	text-align:right;
+	border-radius:10px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>   Select Video </string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" rowspan="4">
+     <widget class="QWidget" name="widget_5" native="true">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>9999</width>
+           <height>9999</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QGroupBox::title {
+width:40px;
+height；40px;
+	image: url(:/images/iamge1/lb2_list-two.png);
+}</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QListWidget" name="listWidget"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>9999</width>
+           <height>9999</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox::title {
+
+	image: url(:/images/iamge1/qpbf_full-screen-play.png);
+}</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QRadioButton" name="radioButton_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton::indicator::unchecked{
+	width:0px;
+	height:0px;
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::indicator::checked{
+	width:0px;
+	height:0px;
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton::unchecked{
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::checked{
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton{
+	text-align:center;
+	border-radius:10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Adapt</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QRadioButton" name="radioButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton::indicator::unchecked{
+	width:0px;
+	height:0px;
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::indicator::checked{
+	width:0px;
+	height:0px;
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton::unchecked{
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::checked{
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton{
+	text-align:center;
+	border-radius:10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Fill</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QRadioButton" name="radioButton_5">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton::indicator::unchecked{
+	width:0px;
+	height:0px;
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::indicator::checked{
+	width:0px;
+	height:0px;
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton::unchecked{
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::checked{
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton{
+	text-align:center;
+	border-radius:10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>16:9</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QRadioButton" name="radioButton_6">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QRadioButton::indicator::unchecked{
+	width:0px;
+	height:0px;
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::indicator::checked{
+	width:0px;
+	height:0px;
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton::unchecked{
+    color:rgb(100, 100, 100);
+	text-align:center;
+}
+QRadioButton::checked{
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QRadioButton{
+	text-align:center;
+	border-radius:10px;
+}</string>
+            </property>
+            <property name="text">
+             <string>4:3</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QWidget" name="widget_4" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>63</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>63</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="checkBox_DQ">
+         <property name="minimumSize">
+          <size>
+           <width>181</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>181</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox::indicator::unchecked{
+	width:0px;
+	height:0px;
+    color:rgb(0, 0, 0);
+	text-align:center;
+}
+QCheckBox::indicator::checked{
+	width:0px;
+	height:0px;
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QCheckBox::unchecked{
+    color:rgb(0, 0, 0);
+	text-align:center;
+}
+QCheckBox::checked{
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QCheckBox{
+
+	background-image: url(:/images/iamge1/bfyc_play-once.png);
+	background-repeat: no-repeat;
+	background-origin: padding;
+	background-position: right center;
+	border: none;
+    color:rgb(0, 0, 0);
+	text-align:left;
+	border-radius:10px;
+}</string>
+         </property>
+         <property name="text">
+          <string>Single Cycle</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QCheckBox" name="checkBox_LB">
+         <property name="minimumSize">
+          <size>
+           <width>161</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>161</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox::indicator::unchecked{
+	width:0px;
+	height:0px;
+    color:rgb(0, 0, 0);
+	text-align:center;
+}
+QCheckBox::indicator::checked{
+	width:0px;
+	height:0px;
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QCheckBox::unchecked{
+    color:rgb(0, 0, 0);
+	text-align:center;
+}
+QCheckBox::checked{
+	color:rgb(43,162, 239);
+	text-align:center;
+}
+QCheckBox{
+	background-image: url(:/images/iamge1/lb_list-top.png);
+	background-repeat: no-repeat;
+	background-origin: padding;
+	background-position: right center;
+	border: none;
+    color:rgb(0, 0, 0);
+	text-align:left;
+	border-radius:10px;
+}</string>
+         </property>
+         <property name="text">
+          <string>List Cycle</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>201</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>201</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:rgb(100, 100, 100);</string>
+         </property>
+         <property name="text">
+          <string>Timed shutdown：</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QSpinBox" name="spinBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+    color:rgb(100, 100, 100);</string>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="singleStep">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="label_3">
+         <property name="minimumSize">
+          <size>
+           <width>131</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>131</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:rgb(100, 100, 100);</string>
+         </property>
+         <property name="text">
+          <string>minutes later</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="minimumSize">
+          <size>
+           <width>41</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>41</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/images/iamge1/yjt_arrow-circle-right.png);
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="6">
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:rgb(100, 100, 100);</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>40</width>
+            <height>40</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/images/iamge1/ztsx_overall-reduction.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="2" rowspan="4">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>99999</width>
+        <height>99999</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QGroupBox::title {
+
+	image: url(:/images/iamge1/lsjl_history.png);
+}</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QPlainTextEdit" name="plainTextEdit"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QWidget" name="widget_2" native="true">
+      <layout class="QGridLayout" name="gridLayout_9">
+       <item row="0" column="0">
+        <widget class="QmyVideoWidget" name="videoWidget" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(0, 0, 0);</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QWidget" name="widget_3" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>45</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>45</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="LabRatio">
+         <property name="minimumSize">
+          <size>
+           <width>86</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>86</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>00:00/00:00</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSlider" name="sliderPosition">
+         <property name="styleSheet">
+          <string notr="true">QSlider::groove:horizontal { 
 	border: 1px solid gray;
 	height: 2px; 
 	left: 8px; 
@@ -201,162 +896,168 @@ QSlider::sub-page:horizontal{
 	background: rgb(80, 165, 245); 
 }
 </string>
+         </property>
+         <property name="tracking">
+          <bool>false</bool>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QWidget" name="widget" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>51</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>51</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>9</number>
        </property>
-       <property name="maximum">
-        <number>100</number>
+       <property name="leftMargin">
+        <number>1</number>
        </property>
-       <property name="value">
-        <number>100</number>
+       <property name="topMargin">
+        <number>1</number>
        </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+       <property name="rightMargin">
+        <number>1</number>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="minimumSize">
-        <size>
-         <width>80</width>
-         <height>40</height>
-        </size>
+       <property name="bottomMargin">
+        <number>1</number>
        </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px</string>
-       </property>
-       <property name="text">
-        <string>全屏</string>
-       </property>
-       <property name="icon">
-        <iconset resource="res.qrc">
-         <normaloff>:/images/images/237.GIF</normaloff>:/images/images/237.GIF</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_3">
-       <property name="minimumSize">
-        <size>
-         <width>100</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton
-{
-	background-image: url(:/images/images/jietu1.png);
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: left center;
-	padding-left:20px;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}
-</string>
-       </property>
-       <property name="text">
-        <string>   截图</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="btnAdd">
-    <property name="geometry">
-     <rect>
-      <x>840</x>
-      <y>20</y>
-      <width>161</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>32</width>
-      <height>32</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton
-{
-	background-image: url(:/images/images/xuanzeshipin.png);
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: left center;
-	padding-left:20px;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}
-</string>
-    </property>
-    <property name="text">
-     <string>    选择视频 </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="LabCurMedia">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>740</y>
-      <width>301</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>无曲目</string>
-    </property>
-   </widget>
-   <widget class="QSlider" name="sliderPosition">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>630</y>
-      <width>691</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QSlider::groove:horizontal { 
+       <item>
+        <widget class="QPushButton" name="btnPlay">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-image: url(:/images/iamge1/bofang_play-one.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnPause">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-image: url(:/images/iamge1/zt_pause.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnStop">
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-image: url(:/images/iamge1/tc_fill.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnPlay_2">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-image: url(:/images/iamge1/z1_left-one.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnPlay_3">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-image: url(:/images/iamge1/y1_right-one.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSound">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/images/iamge1/syd.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="sliderVolumn">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QSlider::groove:horizontal { 
 	border: 1px solid gray;
 	height: 2px; 
 	left: 8px; 
@@ -379,693 +1080,126 @@ QSlider::sub-page:horizontal{
 	background: rgb(80, 165, 245); 
 }
 </string>
-    </property>
-    <property name="tracking">
-     <bool>false</bool>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnAdd_File">
-    <property name="geometry">
-     <rect>
-      <x>1020</x>
-      <y>20</y>
-      <width>161</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton
-{
-	background-image: url(:/images/images/File.png);
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: left center;
-	padding-left:20px;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}
-</string>
-    </property>
-    <property name="text">
-     <string>   打开文件夹</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_DQ">
-    <property name="geometry">
-     <rect>
-      <x>1040</x>
-      <y>140</y>
-      <width>151</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>100</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator::unchecked{
-	width:25px;
-	height:25px;
-	border-image:url(:/images/images/def_chebox.png);
-}
-QCheckBox::indicator::checked{
-	width:32px;
-	height:32px;
-	border-image:url(:/images/images/chebox.png);
-}
-QCheckBox{
-	background-image: url(:/images/images/dqxh1.png);
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: right center;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}</string>
-    </property>
-    <property name="text">
-     <string>单曲循环</string>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_LB">
-    <property name="geometry">
-     <rect>
-      <x>1040</x>
-      <y>200</y>
-      <width>151</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>100</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator::unchecked{
-	width:25px;
-	height:25px;
-	border-image:url(:/images/images/def_chebox.png);
-}
-QCheckBox::indicator::checked{
-	width:32px;
-	height:32px;
-	border-image:url(:/images/images/chebox.png);
-}
-QCheckBox{
-	background-image: url(:/images/images/liebiao1.png);
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: right center;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}</string>
-    </property>
-    <property name="text">
-     <string> 列表循环</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="LabRatio">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>630</y>
-      <width>101</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>00:00/00:00</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>1038</x>
-      <y>300</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <weight>75</weight>
-      <italic>true</italic>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QComboBox {
-    font-size: 14px;
-    color: #000000;
-    font-style: italic;
-    font-weight: bold;
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>100</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius:10px;
+border-image: url(:/images/iamge1/kz_extend.png);
 
-    border-width: 2px;
-    border-style: solid;
-    border-color: aqua;
-}
-</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>0.5</string>
-     </property>
+    color:rgb(100, 100, 100);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <property name="font">
+          <font>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <item>
+          <property name="text">
+           <string>0.5</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1.5</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <pointsize>13</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+    color:rgb(100, 100, 100);</string>
+         </property>
+         <property name="text">
+          <string>Speed</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/images/iamge1/spwj_video-file.png);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
-    <item>
-     <property name="text">
-      <string>1</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>1.5</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>1130</x>
-      <y>300</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>13</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>倍速</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>740</y>
-      <width>81</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>定时关闭：</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spinBox">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>740</y>
-      <width>61</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="maximum">
-     <number>100</number>
-    </property>
-    <property name="singleStep">
-     <number>5</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>740</y>
-      <width>61</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>分钟后</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>710</x>
-      <y>740</y>
-      <width>101</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>40</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton
-{
-	background-image: url(:/images/images/queren.png);
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: left center;
-	padding-left:20px;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}
-</string>
-    </property>
-    <property name="text">
-     <string>   确认</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>820</x>
-      <y>90</y>
-      <width>201</width>
-      <height>341</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="title">
-     <string>目录</string>
-    </property>
-    <widget class="QListWidget" name="listWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>181</width>
-       <height>311</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>820</x>
-      <y>500</y>
-      <width>201</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="title">
-     <string>播放历史</string>
-    </property>
-    <widget class="QPlainTextEdit" name="plainTextEdit">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>181</width>
-       <height>261</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>450</y>
-      <width>32</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>32</width>
-      <height>32</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/images/images/sousuo1.png);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>830</x>
-      <y>450</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_3">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>500</y>
-      <width>161</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="title">
-     <string>小窗口播放</string>
-    </property>
-    <widget class="QRadioButton" name="radioButton_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>89</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QRadioButton::indicator::unchecked{
-	width:25px;
-	height:25px;
-	border-image:url(:/images/images/def_chebox.png);
-}
-QRadioButton::indicator::checked{
-	width:32px;
-	height:32px;
-	border-image:url(:/images/images/chebox.png);
-}
-QRadioButton{
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: right center;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}</string>
-     </property>
-     <property name="text">
-      <string>恢复</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_3">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>131</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QRadioButton::indicator::unchecked{
-	width:25px;
-	height:25px;
-	border-image:url(:/images/images/def_chebox.png);
-}
-QRadioButton::indicator::checked{
-	width:32px;
-	height:32px;
-	border-image:url(:/images/images/chebox.png);
-}
-QRadioButton{
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: right center;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}</string>
-     </property>
-     <property name="text">
-      <string>小窗口</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_4">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>640</y>
-      <width>161</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
-    <property name="title">
-     <string>横纵比：</string>
-    </property>
-    <widget class="QRadioButton" name="radioButton_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>19</y>
-       <width>131</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QRadioButton::indicator::unchecked{
-	width:25px;
-	height:25px;
-	border-image:url(:/images/images/def_chebox.png);
-}
-QRadioButton::indicator::checked{
-	width:32px;
-	height:32px;
-	border-image:url(:/images/images/chebox.png);
-}
-QRadioButton{
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: right center;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}</string>
-     </property>
-     <property name="text">
-      <string>保存横纵比</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>131</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QRadioButton::indicator::unchecked{
-	width:25px;
-	height:25px;
-	border-image:url(:/images/images/def_chebox.png);
-}
-QRadioButton::indicator::checked{
-	width:32px;
-	height:32px;
-	border-image:url(:/images/images/chebox.png);
-}
-QRadioButton{
-	background-repeat: no-repeat;
-	background-origin: padding;
-	background-position: right center;
-	border: none;
-    background-color: rgb(255, 255, 255);    
-    color:rgb(100, 100, 100);
-	text-align:left;
-	border-radius:10px;
-}</string>
-     </property>
-     <property name="text">
-      <string>自适应屏幕</string>
-     </property>
-    </widget>
-   </widget>
+   </layout>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -1077,8 +1211,6 @@ QRadioButton{
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

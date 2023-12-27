@@ -27,5 +27,52 @@
         <file>images/liebiao1.png</file>
         <file>images/chebox.png</file>
         <file>images/def_chebox.png</file>
+        <file>images/wenjianjia.png</file>
+        <file>images/xiaochuangkou.png</file>
+        <file>images/610.bmp</file>
+        <file>images/612.bmp</file>
+        <file>iamge1/bfjf_playback-progress.png</file>
+        <file>iamge1/bfyc_play-once.png</file>
+        <file>iamge1/bgq_play-two.png</file>
+        <file>iamge1/bofang_play.png</file>
+        <file>iamge1/bofang_play-one.png</file>
+        <file>iamge1/jp_screenshot.png</file>
+        <file>iamge1/jsq_stopwatch-start.png</file>
+        <file>iamge1/jt_screenshot-one.png</file>
+        <file>iamge1/jty_arrow-right.png</file>
+        <file>iamge1/kz_extend.png</file>
+        <file>iamge1/lb_list-top.png</file>
+        <file>iamge1/lb2_list-two.png</file>
+        <file>iamge1/lbst_list-view.png</file>
+        <file>iamge1/lsjl_history.png</file>
+        <file>iamge1/nbsx_internal-reduction.png</file>
+        <file>iamge1/qhan_switch-button.png</file>
+        <file>iamge1/qjfd_full-screen.png</file>
+        <file>iamge1/qjsx2_off-screen-two.png</file>
+        <file>iamge1/qjxs_off-screen-one.png</file>
+        <file>iamge1/qpbf_full-screen-play.png</file>
+        <file>iamge1/sp_video.png</file>
+        <file>iamge1/spwj_video-file.png</file>
+        <file>iamge1/ss_search.png</file>
+        <file>iamge1/sx_zoom-out.png</file>
+        <file>iamge1/syd.png</file>
+        <file>iamge1/tc_fill.png</file>
+        <file>iamge1/wdjz_document-folder.png</file>
+        <file>iamge1/xqlbview-list.png</file>
+        <file>iamge1/y1_right-one.png</file>
+        <file>iamge1/yjt_arrow-circle-right.png</file>
+        <file>iamge1/yjtf_right-square.png</file>
+        <file>iamge1/yy_right-c.png</file>
+        <file>iamge1/yycd_music-list.png</file>
+        <file>iamge1/z1_left-one.png</file>
+        <file>iamge1/zjtf_left-square.png</file>
+        <file>iamge1/zt_pause.png</file>
+        <file>iamge1/ztsx_overall-reduction.png</file>
+        <file>iamge1/zty_pause-one.png</file>
+        <file>iamge1/zy_left-c.png</file>
+        <file>iamge1/sp_videoxx.png</file>
     </qresource>
+    <qresource prefix="/image1"/>
+    <qresource lang="0" prefix="/iamge1"/>
+    <qresource prefix="/images1"/>
 </RCC>

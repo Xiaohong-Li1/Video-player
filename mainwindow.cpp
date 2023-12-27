@@ -7,6 +7,7 @@
 #include <QGraphicsView>
 #include <QGraphicsVideoItem>
 #include <QDateTime>
+#include <QDesktopWidget>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -16,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     player = new QMediaPlayer(this);//创建视频播放器
     player->setNotifyInterval(2000);//信息更新周期
     player->setVideoOutput(ui->videoWidget);//视频显示组件
-
+    this->setWindowTitle("Video Player");
     ui->videoWidget->setMediaPlayer(player);//设置显示组件的关联播放器
 
     connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),
@@ -32,21 +33,33 @@ MainWindow::MainWindow(QWidget *parent) :
 
     videoWidget_Min = new QVideoWidget();
     videoWidget_Min->setGeometry(0,0,300,200);
+
+    QDesktopWidget *desktop=QApplication::desktop();
+    videoWidget_Max = new QVideoWidget();
+    videoWidget_Max->setGeometry(desktop->screenGeometry(0));
+    videoWidget_Max->hide();
+
+    ui->radioButton_2->setChecked(true);
+    ui->pushButton_5->setGeometry((ui->groupBox_3->width()-40)/2,(ui->groupBox_3->height()-40)/2,40,40);
+    ui->groupBox->setTitle("     ");
+    ui->groupBox_2->setTitle("     ");
+    ui->groupBox_3->setTitle("     ");
+    ui->groupBox_4->setTitle("     ");
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
     delete videoWidget_Min;
+    delete videoWidget_Max;
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     qDebug()<<"MainWindow::keyPressEvent";
     //退出全屏
-    ui->videoWidget->setWindowFlags(Qt::SubWindow);
-    ui->videoWidget->showNormal();
-    ui->videoWidget->setGeometry(10,10,800,600);
+    player->setVideoOutput(ui->videoWidget);
+    videoWidget_Max->hide();
 }
 
 void MainWindow::onstateChanged(QMediaPlayer::State state)
@@ -64,6 +77,8 @@ void MainWindow::playstate(QMediaPlayer::MediaStatus status)
         if(ui->checkBox_DQ->isChecked())
         {
             ui->plainTextEdit->appendPlainText(CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]));
+            ui->LabCurMedia->setText(VideoNameList[curentVideoNum]);
+            ui->listWidget->setCurrentRow(curentVideoNum);
             player->play();
         }
         else if(ui->checkBox_LB->isChecked())
@@ -77,8 +92,10 @@ void MainWindow::playstate(QMediaPlayer::MediaStatus status)
                 }
                 QString Path = CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]);
                 ui->plainTextEdit->appendPlainText(CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]));
+                ui->LabCurMedia->setText(VideoNameList[curentVideoNum]);
                 qDebug()<<"curentVideoNum="<<curentVideoNum<<",Path="<<Path;
                 player->setMedia(QUrl::fromLocalFile(Path));//设置播放文件
+                ui->listWidget->setCurrentRow(curentVideoNum);
                 player->play();
             }
         }
@@ -127,6 +144,7 @@ void MainWindow::on_btnAdd_clicked()
 
     player->setMedia(QUrl::fromLocalFile(aFile));//设置播放文件
     ui->plainTextEdit->appendPlainText(aFile);
+    ui->LabCurMedia->setText(fileInfo.fileName());
 
     player->play();
 }
@@ -168,7 +186,10 @@ void MainWindow::on_sliderPosition_valueChanged(int value)
 
 void MainWindow::on_pushButton_clicked()
 {//全屏按钮
-    ui->videoWidget->setFullScreen(true);
+
+    videoWidget_Max = new QVideoWidget();
+    player->setVideoOutput(videoWidget_Min);
+    videoWidget_Max->show();
 }
 
 void MainWindow::on_btnAdd_File_clicked()
@@ -211,6 +232,7 @@ void MainWindow::on_listWidget_doubleClicked(const QModelIndex &index)
     qDebug()<<"curentVideoNum="<<curentVideoNum<<",Path="<<Path;
     player->setMedia(QUrl::fromLocalFile(Path));//设置播放文件
     ui->plainTextEdit->appendPlainText(Path);
+    ui->LabCurMedia->setText(ui->listWidget->item(index.row())->text());
     player->play();
 }
 
@@ -257,14 +279,19 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_radioButton_clicked(bool checked)
 {
+    qDebug()<<"on_radioButton_clicked"<<checked;
+    ui->videoWidget->setGeometry(0,0,ui->widget_2->width(),ui->widget_2->height());
     if(checked)
         ui->videoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
 }
 
 void MainWindow::on_radioButton_2_clicked(bool checked)
 {
+    qDebug()<<"on_radioButton_2_clicked"<<checked;
+    ui->videoWidget->setGeometry(0,0,ui->widget_2->width(),ui->widget_2->height());
     if(checked)
         ui->videoWidget->setAspectRatioMode(Qt::KeepAspectRatioByExpanding);
+
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -288,25 +315,6 @@ void MainWindow::on_pushButton_3_clicked()
      player->play();
 }
 
-void MainWindow::on_radioButton_3_clicked(bool checked)
-{
-    if(checked)
-    {
-        videoWidget_Min = new QVideoWidget();
-        videoWidget_Min->setGeometry(0,0,300,200);
-        player->setVideoOutput(videoWidget_Min);
-        videoWidget_Min->show();
-    }
-}
-
-void MainWindow::on_radioButton_4_clicked(bool checked)
-{
-    if(checked)
-    {
-        player->setVideoOutput(ui->videoWidget);
-        videoWidget_Min->hide();
-    }
-}
 
 void MainWindow::on_pushButton_4_clicked()
 {
@@ -347,3 +355,91 @@ void MainWindow::on_checkBox_LB_clicked(bool checked)
     ui->checkBox_DQ->setChecked(!checked);
     ui->checkBox_LB->setChecked(checked);
 }
+
+void MainWindow::on_radioButton_5_clicked(bool checked)
+{
+    ui->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
+    int x = (ui->widget_2->width() - 864) / 2;
+    int y = (ui->widget_2->height() - 486) / 2;
+    qDebug()<<ui->widget_2->width()<<ui->widget_2->height()<<x<<y;
+    ui->videoWidget->setGeometry(x,y,864,486);
+    player->setVideoOutput(ui->videoWidget);
+    videoWidget_Min->hide();
+    videoWidget_Max->hide();
+
+}
+
+
+void MainWindow::on_radioButton_6_clicked(bool checked)
+{
+    ui->videoWidget->setAspectRatioMode(Qt::KeepAspectRatio);
+    int x = (ui->widget_2->width() - 666) / 2;
+    int y = (ui->widget_2->height() - 500) / 2;
+    qDebug()<<ui->widget_2->width()<<ui->widget_2->height()<<x<<y;
+    ui->videoWidget->setGeometry(x-50,y,666,500);
+    player->setVideoOutput(ui->videoWidget);
+    videoWidget_Min->hide();
+    videoWidget_Max->hide();
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    static bool data = false;
+    if(data)
+    {
+        ui->pushButton_5->setGeometry((ui->groupBox_3->width()-20)/2,(ui->groupBox_3->height()-20)/2,20,20);
+        videoWidget_Min = new QVideoWidget();
+        videoWidget_Min->setGeometry(0,0,300,200);
+        player->setVideoOutput(videoWidget_Min);
+        videoWidget_Min->show();
+    }
+    else
+    {
+        ui->pushButton_5->setGeometry((ui->groupBox_3->width()-40)/2,(ui->groupBox_3->height()-40)/2,40,40);
+        player->setVideoOutput(ui->videoWidget);
+        videoWidget_Min->hide();
+    }
+    data = !data;
+}
+
+
+void MainWindow::on_btnPlay_2_clicked()
+{
+    curentVideoNum--;
+    if(curentVideoNum < 0)
+    {
+        curentVideoNum = VideoNameList.length()-1;
+    }
+    if(VideoNameList.length() > curentVideoNum)
+    {
+        QString Path = CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]);
+        ui->plainTextEdit->appendPlainText(CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]));
+        ui->LabCurMedia->setText(VideoNameList[curentVideoNum]);
+        qDebug()<<"curentVideoNum="<<curentVideoNum<<",Path="<<Path;
+        player->setMedia(QUrl::fromLocalFile(Path));//设置播放文件
+        ui->listWidget->setCurrentRow(curentVideoNum);
+        player->play();
+    }
+}
+
+
+void MainWindow::on_btnPlay_3_clicked()
+{
+    curentVideoNum++;
+    if(curentVideoNum >= VideoNameList.length())
+    {
+        curentVideoNum = 0;
+    }
+    if(VideoNameList.length() > curentVideoNum)
+    {
+        QString Path = CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]);
+        ui->plainTextEdit->appendPlainText(CurrentselectedDir+"/"+QString(VideoNameList[curentVideoNum]));
+        ui->LabCurMedia->setText(VideoNameList[curentVideoNum]);
+        qDebug()<<"curentVideoNum="<<curentVideoNum<<",Path="<<Path;
+        player->setMedia(QUrl::fromLocalFile(Path));//设置播放文件
+        ui->listWidget->setCurrentRow(curentVideoNum);
+        player->play();
+    }
+}
+

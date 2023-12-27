@@ -58,9 +58,6 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-    void on_radioButton_3_clicked(bool checked);
-
-    void on_radioButton_4_clicked(bool checked);
 
     void on_pushButton_4_clicked();
 
@@ -68,6 +65,16 @@ private slots:
     void on_checkBox_DQ_clicked(bool checked);
 
     void on_checkBox_LB_clicked(bool checked);
+
+    void on_radioButton_5_clicked(bool checked);
+
+    void on_radioButton_6_clicked(bool checked);
+
+    void on_pushButton_5_clicked();
+
+    void on_btnPlay_2_clicked();
+
+    void on_btnPlay_3_clicked();
 
 public:
     QMediaPlayer    *player;//视频播放器
@@ -79,6 +86,7 @@ public:
     QStringList VideoNameList;//视频列表
 
     QVideoWidget *videoWidget_Min;
+    QVideoWidget *videoWidget_Max;
 private:
     Ui::MainWindow *ui;
 };
