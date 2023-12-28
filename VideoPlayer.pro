@@ -9,7 +9,9 @@ QT       += core gui
 QT	+= multimedia
 
 QT += multimediawidgets
-
+msvc{
+QMAKE_CXXFLAGS +=/utf-8
+}
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = VideoPlayer
@@ -28,13 +30,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
+    landscape.cpp \
         mainwindow.cpp \
+    portrait.cpp \
     qmyvideowidget.cpp
 
 HEADERS  += mainwindow.h \
+    landscape.h \
+    portrait.h \
     qmyvideowidget.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    landscape.ui \
+    portrait.ui
 
 RESOURCES += \
     res.qrc
